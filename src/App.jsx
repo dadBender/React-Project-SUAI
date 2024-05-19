@@ -1,30 +1,36 @@
+// файл app.jsx
 import Header from "./components/Header/Header";
-import { useState } from 'react';
+import PageHome from "./components/PageHome/PageHome";
+import PageSlider from "./components/PageSlider/PageSlider";
+import PageInfo from "./components/PageInfo";
+import PageAbout from "./components/PageAbout";
+
+import { useState } from "react";
 
 export default function App() {
-  const [active, setActive] = useState('home'); // Добавляем состояние для отслеживания активного раздела
+  const [active, setActive] = useState("home"); // Добавляем состояние для отслеживания активного раздела
+
+  const handleSectionChange = (newActive) => {
+    setActive(newActive);
+  };
 
   return (
     <>
-      <Header active={active} onChange={(current) => setActive(current)} />
-      {active === "home" && (
-        <>
-          <div>home</div>
-        </>
-      )}
+      <Header active={active} onChange={handleSectionChange} />
+      {active === "home" && <PageHome />}
       {active === "slider" && (
         <>
-          <div>slider</div>
+          <PageSlider />
         </>
       )}
       {active === "info" && (
         <>
-          <div>info</div>
+          <PageInfo />
         </>
       )}
       {active === "aboutUs" && (
         <>
-          <div>aboutUs</div>
+          <PageAbout />
         </>
       )}
     </>

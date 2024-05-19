@@ -1,19 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  text-align: center;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
-}
 
 .nav {
   display: inline-flex;
@@ -23,7 +8,8 @@ body {
   background-color: #fff;
   padding: 0 20px;
   border-radius: 40px;
-  box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  margin-top: 15px;
 }
 
 .nav-item {
@@ -32,13 +18,13 @@ body {
   user-select: none;
   padding: 20px;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
   margin: 0 6px;
   z-index: 1;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 500;
   position: relative;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -49,8 +35,12 @@ body {
     background-color: #dfe2ea;
     border-radius: 8px 8px 0 0;
     opacity: 0;
-    transition: .3s;
+    transition: 0.3s;
   }
+}
+
+.is-active {
+  color: #000000;
 }
 
 .nav-item:not(.is-active):hover:before {
@@ -58,20 +48,40 @@ body {
   bottom: 0;
 }
 
-
-.nav-item:not(.is-active):hover { color: #333; }
+.nav-item:not(.is-active):hover {
+  color: #000000;
+}
 
 .nav-indicator {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 4px;
-  transition: .4s;
+  transition: 0.4s;
   height: 5px;
   z-index: 1;
   border-radius: 8px 8px 0 0;
 }
 
 @media (max-width: 580px) {
-  .nav { overflow: auto; }
+  .nav {
+    overflow: auto;
+  }
+}
+
+.logo,
+.logoName {
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #535353;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }

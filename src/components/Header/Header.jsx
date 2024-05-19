@@ -1,8 +1,9 @@
+// файл Header.jsx
 import "./Header.css";
-import "./interactiveHeader"
+
 import LinkSection from "./LinkSection";
 
-export default function Header({ active, onChange }) { // Принимаем состояние и обработчик изменений как пропсы
+export default function Header({ active, onChange }) {
   return (
     <header>
       <nav className="nav">
@@ -13,7 +14,6 @@ export default function Header({ active, onChange }) { // Принимаем с�
           Home
         </LinkSection>
         <LinkSection
-            
           isActive={active === "slider"}
           onClick={() => onChange("slider")}
         >
